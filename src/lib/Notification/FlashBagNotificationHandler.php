@@ -15,7 +15,7 @@ class FlashBagNotificationHandler implements NotificationHandlerInterface
     const TYPE_INFO = 'info';
     const TYPE_SUCCESS = 'success';
     const TYPE_WARNING = 'warning';
-    const TYPE_ERROR = 'danger';
+    const TYPE_ERROR = 'error';
 
     /**
      * @var \Symfony\Component\HttpFoundation\Session\SessionInterface
