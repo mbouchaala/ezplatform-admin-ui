@@ -122,4 +122,4 @@
     };
 
     datetimeFields.forEach(initFlatPickr);
-})(window, window.document, window.eZ, window.flatpickr);
+})(window, document, window.eZ, window.flatpickr);

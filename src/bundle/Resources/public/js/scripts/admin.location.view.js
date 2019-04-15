@@ -43,9 +43,9 @@
             if (addDraftButton) {
                 addDraftButton.addEventListener('click', addDraft, false);
             }
-            [...wrapper.querySelectorAll('.ez-btn--prevented')].forEach((btn) =>
-                btn.addEventListener('click', (event) => event.preventDefault(), false)
-            );
+            wrapper
+                .querySelectorAll('.ez-btn--prevented')
+                .forEach((btn) => btn.addEventListener('click', (event) => event.preventDefault(), false));
             $('#version-draft-conflict-modal').modal('show');
         };
         fetch(checkVersionDraftLink, {
@@ -148,4 +148,4 @@
             container
         );
     });
-})(window, window.document, window.jQuery, window.React, window.ReactDOM, window.eZ, window.Routing);
+})(window, document, window.jQuery, window.React, window.ReactDOM, window.eZ, window.Routing);

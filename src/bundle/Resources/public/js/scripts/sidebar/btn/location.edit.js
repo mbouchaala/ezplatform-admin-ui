@@ -18,7 +18,7 @@
         const checkedBtn = btns.find((btn) => btn.checked);
         const language = checkedBtn.value;
 
-        window.location.href = global.Routing.generate('ez_user_update', { contentId, versionNo, language });
+        global.location.href = global.Routing.generate('ez_user_update', { contentId, versionNo, language });
     };
     const onModalHidden = () => {
         resetRadioButtons();
@@ -34,9 +34,9 @@
             addDraftButton.addEventListener('click', addDraft, false);
         }
 
-        [...wrapper.querySelectorAll('.ez-btn--prevented')].forEach((btn) =>
-            btn.addEventListener('click', (event) => event.preventDefault(), false)
-        );
+        wrapper
+            .querySelectorAll('.ez-btn--prevented')
+            .forEach((btn) => btn.addEventListener('click', (event) => event.preventDefault(), false));
 
         $('#version-draft-conflict-modal')
             .modal('show')

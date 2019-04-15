@@ -38,11 +38,13 @@
             window.setTimeout(() => btn.click(), 0);
         } else {
             btn.dataset.validatorsWithErrors = Array.from(
-                validationResults.filter((result) => !result.isValid).reduce((total, result) => {
-                    total.add(result.validatorName);
+                validationResults
+                    .filter((result) => !result.isValid)
+                    .reduce((total, result) => {
+                        total.add(result.validatorName);
 
-                    return total;
-                }, new Set())
+                        return total;
+                    }, new Set())
             ).join();
 
             fields.forEach((field) => field.removeAttribute('id'));
@@ -57,4 +59,4 @@
         btn.dataset.isFormValid = 0;
         btn.addEventListener('click', clickHandler, false);
     });
-})(window, window.document, window.eZ);
+})(window, document, window.eZ);

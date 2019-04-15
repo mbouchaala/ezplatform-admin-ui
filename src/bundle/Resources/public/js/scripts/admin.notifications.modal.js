@@ -19,7 +19,7 @@
         }
 
         if (response.redirect) {
-            window.location = response.redirect;
+            global.location = response.redirect;
         }
     };
     const handleNotificationClick = (notification) => {
@@ -59,7 +59,7 @@
             mode: 'cors',
             credentials: 'same-origin',
             headers: {
-                'X-Requested-With' : 'XMLHttpRequest'
+                'X-Requested-With': 'XMLHttpRequest',
             },
         });
 

@@ -196,7 +196,7 @@
 
             const removedItems = [];
 
-            [...relationsContainer.querySelectorAll('input:checked')].forEach((input) => {
+            relationsContainer.querySelectorAll('input:checked').forEach((input) => {
                 removedItems.push(parseInt(input.value, 10));
 
                 input.closest('tr').remove();

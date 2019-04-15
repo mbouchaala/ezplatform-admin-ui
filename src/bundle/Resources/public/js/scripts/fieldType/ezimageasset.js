@@ -137,7 +137,7 @@
             const previewActionPreview = preview.querySelector('.ez-field-edit-preview__action--preview');
             const assetNameContainer = preview.querySelector('.ez-field-edit-preview__asset-name a');
             const destinationLocationUrl = global.Routing.generate('_ezpublishLocation', {
-                locationId: destinationLocationId
+                locationId: destinationLocationId,
             });
 
             previewImg.setAttribute('src', image ? image.uri : '//:0');

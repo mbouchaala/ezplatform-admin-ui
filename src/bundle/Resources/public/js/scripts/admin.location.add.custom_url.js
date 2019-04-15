@@ -1,4 +1,4 @@
-(function (global, doc) {
+(function(global, doc) {
     const modal = doc.querySelector('#ez-modal--custom-url-alias');
 
     if (modal) {
@@ -24,7 +24,7 @@
         };
 
         input.addEventListener('input', toggleButtonState, false);
-        checkboxes.forEach(checkbox => checkbox.addEventListener('change', toggleCheckbox, false));
-        discardBtns.forEach(btn => btn.addEventListener('click', clearValues, false));
+        checkboxes.forEach((checkbox) => checkbox.addEventListener('change', toggleCheckbox, false));
+        discardBtns.forEach((btn) => btn.addEventListener('click', clearValues, false));
     }
 })(window, document);

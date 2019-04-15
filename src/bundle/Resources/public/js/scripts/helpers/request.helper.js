@@ -6,7 +6,7 @@
      *
      * @function handleRequest
      * @param {Response} response
-     * @returns {Error|Promise}
+     * @returns {Error|Response}
      */
     const handleRequest = (response) => {
         if (!response.ok) {

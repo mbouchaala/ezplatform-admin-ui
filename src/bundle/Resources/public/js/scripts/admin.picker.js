@@ -46,4 +46,4 @@
     };
 
     pickers.forEach(initFlatPickr);
-})(window, window.document, window.flatpickr);
+})(window, document, window.flatpickr);

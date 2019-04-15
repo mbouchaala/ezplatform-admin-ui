@@ -21,7 +21,7 @@
 
         ReactDOM.render(
             React.createElement(
-                global.eZ.modules.UniversalDiscovery,
+                eZ.modules.UniversalDiscovery,
                 Object.assign(
                     {
                         onConfirm,
@@ -29,11 +29,11 @@
                         title,
                         multiple: false,
                         startingLocationId: parseInt(event.currentTarget.dataset.rootLocation, 10),
-                        restInfo: {token, siteaccess},
+                        restInfo: { token, siteaccess },
                         allowContainersOnly: true,
                     },
                     config
-                ),
+                )
             ),
             udwContainer
         );

@@ -7,7 +7,7 @@
     const onConfirm = (items) => {
         closeUDW();
 
-        window.location.href = window.Routing.generate('_ezpublishLocation', { locationId: items[0].id });
+        global.location.href = global.Routing.generate('_ezpublishLocation', { locationId: items[0].id });
     };
     const onCancel = () => closeUDW();
     const openUDW = (event) => {
