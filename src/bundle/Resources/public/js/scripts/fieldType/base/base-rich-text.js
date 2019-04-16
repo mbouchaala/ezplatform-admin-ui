@@ -58,7 +58,7 @@
 
         getHTMLDocumentFragment(data) {
             const fragment = doc.createDocumentFragment();
-            const root = fragment.ownerdoc.createElement('div');
+            const root = fragment.ownerDocument.createElement('div');
             const parsedHTML = new DOMParser().parseFromString(data, 'text/xml');
             const importChildNodes = (parent, element, skipElement) => {
                 let i;

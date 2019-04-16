@@ -59,7 +59,7 @@
 
     validator.init();
 
-    eZ.fieldTypeValidators = eZ.fieldTypeValidators ? [...eZ.fieldTypeValidators, validator] : [validator];
+    eZ.addConfig('fieldTypeValidators', [validator], true);
 
     const datetimeFields = [...doc.querySelectorAll(SELECTOR_FIELD)];
     const datetimeConfig = {

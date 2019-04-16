@@ -44,7 +44,7 @@
 
     validator.init();
 
-    eZ.fieldTypeValidators = eZ.fieldTypeValidators ? [...eZ.fieldTypeValidators, validator] : [validator];
+    eZ.addConfig('fieldTypeValidators', [validator], true);
 
     doc.querySelectorAll(SELECTOR_FIELD).forEach((container) => {
         const dropdown = new eZ.core.CustomDropdown({
