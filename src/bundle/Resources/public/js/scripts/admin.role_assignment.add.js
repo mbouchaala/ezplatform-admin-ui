@@ -1,4 +1,4 @@
-(function(global, doc, eZ) {
+(function(global, doc, eZ, React, ReactDOM) {
     const udwContainer = doc.getElementById('react-udw');
     const limitationsRadio = doc.querySelectorAll('.ez-limitations__radio');
     const token = doc.querySelector('meta[name="CSRF-Token"]').content;
@@ -47,4 +47,4 @@
 
     doc.querySelector('.ez-btn--select-subtree').addEventListener('click', selectSubtree, false);
     limitationsRadio.forEach((radio) => radio.addEventListener('change', toggleDisabledState, false));
-})(window, document, window.eZ);
+})(window, document, window.eZ, window.React, window.ReactDOM);

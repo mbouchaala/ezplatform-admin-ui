@@ -22,7 +22,7 @@
          * @method validateCoordInput
          * @param {HTMLElement} input
          * @param {Object} range of coord input
-         * @returns {Boolean}
+         * @returns {Object}
          */
         validateCoordInput(input, { min, max }) {
             const value = parseFloat(input.value.replace(',', '.'));

@@ -1,4 +1,4 @@
-(function(global, doc, $) {
+(function(global, doc, $, flatpickr) {
     let getUsersTimeout;
     const token = doc.querySelector('meta[name="CSRF-Token"]').content;
     const siteaccess = doc.querySelector('meta[name="SiteAccess"]').content;
@@ -6,7 +6,7 @@
     const filters = doc.querySelector('.ez-filters');
     const clearBtn = filters.querySelector('.ez-btn-clear');
     const applyBtn = filters.querySelector('.ez-btn-apply');
-    const selectBtns = doc.querySelectorAll('.ez-btn--select')
+    const selectBtns = doc.querySelectorAll('.ez-btn--select');
     const dateFields = doc.querySelectorAll('.ez-date-select');
     const contentTypeSelector = doc.querySelector('.ez-content-type-selector');
     const contentTypeSelect = doc.querySelector('.ez-filters__item--content-type .ez-filters__select');
@@ -171,7 +171,7 @@
             defaultDate = new Date(sourceInput.value * 1000);
         }
 
-        global.flatpickr(
+        flatpickr(
             flatPickrInput,
             Object.assign({}, dateConfig, {
                 onChange: updateSourceInputValue.bind(null, sourceInput),
@@ -289,4 +289,4 @@
     listGroupsTitle.forEach((group) => group.addEventListener('click', toggleGroupState, false));
     contentTypeCheckboxes.forEach((checkbox) => checkbox.addEventListener('change', filterByContentType, false));
     selectBtns.forEach((btn) => btn.addEventListener('click', setSelectedDateRange, false));
-})(window, document, window.jQuery);
+})(window, document, window.jQuery, window.flatpickr);

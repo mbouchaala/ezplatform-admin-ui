@@ -1,4 +1,4 @@
-(function(global, doc, $, eZ) {
+(function(global, doc, $, eZ, Routing) {
     const FORM_EDIT = 'form.ez-edit-content-form';
     const showErrorNotification = eZ.helpers.notification.showErrorNotification;
     const editVersion = (event) => {
@@ -13,7 +13,7 @@
         );
         const versionInfoVersionNoInput = versionEditForm.querySelector(`input[name="${versionEditFormName}[version_info][version_no]"]`);
         const languageInput = versionEditForm.querySelector(`#${versionEditFormName}_language_${languageCode}`);
-        const checkVersionDraftLink = global.Routing.generate('ezplatform.version_draft.has_no_conflict', { contentId });
+        const checkVersionDraftLink = Routing.generate('ezplatform.version_draft.has_no_conflict', { contentId });
         const submitVersionEditForm = () => {
             contentInfoInput.value = contentId;
             versionInfoContentInfoInput.value = contentId;
@@ -29,10 +29,13 @@
             const wrapper = doc.querySelector('.ez-modal-wrapper');
 
             wrapper.innerHTML = modalHtml;
+
             const addDraftButton = wrapper.querySelector('.ez-btn--add-draft');
+
             if (addDraftButton) {
                 addDraftButton.addEventListener('click', addDraft, false);
             }
+
             wrapper
                 .querySelectorAll('.ez-btn--prevented')
                 .forEach((btn) => btn.addEventListener('click', (event) => event.preventDefault(), false));
@@ -57,4 +60,4 @@
     };
 
     doc.querySelectorAll('.ez-btn--content-edit').forEach((button) => button.addEventListener('click', editVersion, false));
-})(window, document, window.jQuery, window.eZ);
+})(window, document, window.jQuery, window.eZ, window.Routing);

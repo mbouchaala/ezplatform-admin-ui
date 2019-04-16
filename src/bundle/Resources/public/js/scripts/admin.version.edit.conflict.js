@@ -12,6 +12,7 @@
                 doc.querySelector('#edit-conflicted-draft').href = contentDraftEditUrl;
                 $('#version-conflict-modal').modal('show');
             }
+
             if (response.status === 200) {
                 global.location.href = contentDraftEditUrl;
             }

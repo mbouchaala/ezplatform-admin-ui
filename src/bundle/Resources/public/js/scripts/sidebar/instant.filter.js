@@ -1,8 +1,8 @@
-(function() {
+(function(global, doc) {
     let filterTimeout;
     const SELECTOR_ITEM = '.ez-instant-filter__group-item';
     const timeout = 200;
-    const filters = document.querySelectorAll('.ez-instant-filter');
+    const filters = doc.querySelectorAll('.ez-instant-filter');
     const toggleGroupNameDisplay = (group) => {
         const hasVisibleChildren = !![...group.querySelectorAll(SELECTOR_ITEM)].filter((item) => !item.hasAttribute('hidden')).length;
         const groupName = group.querySelector('.ez-instant-filter__group-name');
@@ -44,4 +44,4 @@
     };
 
     filters.forEach(initFilter);
-})();
+})(window, document);

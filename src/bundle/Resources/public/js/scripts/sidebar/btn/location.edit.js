@@ -1,10 +1,10 @@
-(function(global, doc, $) {
+(function(global, doc, $, Routing) {
     const editActions = doc.querySelector('.ez-extra-actions--edit') || doc.querySelector('.ez-extra-actions--edit-user');
     const btns = [...editActions.querySelectorAll('.form-check [type="radio"]')];
     const form = editActions.querySelector('form');
     const contentIdInput = form.querySelector('#content_edit_content_info') || form.querySelector('#user_edit_content_info');
     const contentId = contentIdInput.value;
-    const checkVersionDraftLink = global.Routing.generate('ezplatform.version_draft.has_no_conflict', { contentId });
+    const checkVersionDraftLink = Routing.generate('ezplatform.version_draft.has_no_conflict', { contentId });
     const resetRadioButtons = () =>
         btns.forEach((btn) => {
             btn.checked = false;
@@ -18,7 +18,7 @@
         const checkedBtn = btns.find((btn) => btn.checked);
         const language = checkedBtn.value;
 
-        global.location.href = global.Routing.generate('ez_user_update', { contentId, versionNo, language });
+        global.location.href = Routing.generate('ez_user_update', { contentId, versionNo, language });
     };
     const onModalHidden = () => {
         resetRadioButtons();
@@ -67,4 +67,4 @@
     };
 
     btns.forEach((btn) => btn.addEventListener('change', changeHandler, false));
-})(window, document, window.jQuery);
+})(window, document, window.jQuery, window.Routing);

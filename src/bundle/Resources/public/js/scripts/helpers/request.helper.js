@@ -1,6 +1,4 @@
-(function(global, doc) {
-    const eZ = (global.eZ = global.eZ || {});
-
+(function(global, doc, eZ) {
     /**
      * Handles request error
      *
@@ -49,10 +47,9 @@
         return handleRequest(response).status;
     };
 
-    eZ.helpers = eZ.helpers || {};
-    eZ.helpers.request = {
+    eZ.addConfig('helpers.request', {
         getJsonFromResponse,
         getTextFromResponse,
         getStatusFromResponse,
-    };
-})(window, document);
+    });
+})(window, document, window.eZ);

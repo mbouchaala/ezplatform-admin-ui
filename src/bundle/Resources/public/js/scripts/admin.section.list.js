@@ -1,4 +1,4 @@
-(function(global, doc, eZ) {
+(function(global, doc, eZ, React, ReactDOM) {
     const btns = doc.querySelectorAll('.btn--open-udw');
     const udwContainer = doc.getElementById('react-udw');
     const token = doc.querySelector('meta[name="CSRF-Token"]').content;
@@ -19,6 +19,7 @@
         const form = doc.querySelector('form[name="section_content_assign"]');
         const btn = event.target.closest('a');
         const config = JSON.parse(btn.dataset.udwConfig);
+
         form.action = btn.dataset.formAction;
         doc.querySelector('#section_content_assign_section').value = btn.dataset.sectionId;
 
@@ -40,4 +41,4 @@
     };
 
     btns.forEach((btn) => btn.addEventListener('click', openUDW, false));
-})(window, document, window.eZ);
+})(window, document, window.eZ, window.React, window.ReactDOM);

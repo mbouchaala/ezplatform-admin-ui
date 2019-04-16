@@ -1,4 +1,4 @@
-(function(global, doc, eZ, CKEDITOR) {
+(function(global, doc, eZ, CKEDITOR, AlloyEditor) {
     const TEXT_NODE = 3;
 
     class BaseRichText {
@@ -186,7 +186,7 @@
 
         init(container) {
             const toolbarProps = { extraButtons: this.alloyEditorExtraButtons };
-            const alloyEditor = global.AlloyEditor.editable(container.getAttribute('id'), {
+            const alloyEditor = AlloyEditor.editable(container.getAttribute('id'), {
                 toolbars: {
                     ezadd: {
                         buttons: [
@@ -236,7 +236,7 @@
                     },
                 },
                 extraPlugins:
-                    global.AlloyEditor.Core.ATTRS.extraPlugins.value +
+                    AlloyEditor.Core.ATTRS.extraPlugins.value +
                     ',' +
                     [
                         'ezaddcontent',
@@ -346,4 +346,4 @@
     }
 
     eZ.addConfig('BaseRichText', BaseRichText);
-})(window, document, window.eZ, window.CKEDITOR);
+})(window, document, window.eZ, window.CKEDITOR, window.AlloyEditor);

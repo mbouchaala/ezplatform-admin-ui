@@ -1,4 +1,4 @@
-(function(global, doc, eZ) {
+(function(global, doc, eZ, React, ReactDOM) {
     const btns = doc.querySelectorAll('.btn--open-udw');
     const udwContainer = doc.getElementById('react-udw');
     const token = doc.querySelector('meta[name="CSRF-Token"]').content;
@@ -37,4 +37,4 @@
     };
 
     btns.forEach((btn) => btn.addEventListener('click', openUDW, false));
-})(window, document, window.eZ);
+})(window, document, window.eZ, window.React, window.ReactDOM);
