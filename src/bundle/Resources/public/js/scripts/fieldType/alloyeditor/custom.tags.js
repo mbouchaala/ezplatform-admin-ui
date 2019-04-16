@@ -1,4 +1,4 @@
-(function(global, doc, eZ) {
+(function(global, doc, eZ, AlloyEditor) {
     Object.entries(eZ.adminUiConfig.richTextCustomTags).forEach(([customTag, tagConfig]) => {
         const isInline = tagConfig.isInline;
         const componentClassName = `ezBtn${customTag.charAt(0).toUpperCase() + customTag.slice(1)}`;
@@ -61,8 +61,8 @@
             }
         }
 
-        global.AlloyEditor.Buttons[ButtonCustomTag.key] = global.AlloyEditor[componentClassName] = ButtonCustomTag;
-        global.AlloyEditor.Buttons[ButtonCustomTagEdit.key] = global.AlloyEditor[editComponentClassName] = ButtonCustomTagEdit;
-        global.AlloyEditor.Buttons[ButtonCustomTagUpdate.key] = global.AlloyEditor[updateComponentClassName] = ButtonCustomTagUpdate;
+        AlloyEditor.Buttons[ButtonCustomTag.key] = AlloyEditor[componentClassName] = ButtonCustomTag;
+        AlloyEditor.Buttons[ButtonCustomTagEdit.key] = AlloyEditor[editComponentClassName] = ButtonCustomTagEdit;
+        AlloyEditor.Buttons[ButtonCustomTagUpdate.key] = AlloyEditor[updateComponentClassName] = ButtonCustomTagUpdate;
     });
-})(window, document, window.eZ);
+})(window, document, window.eZ, window.AlloyEditor);

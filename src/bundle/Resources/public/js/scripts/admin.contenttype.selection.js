@@ -7,7 +7,7 @@
     const NUMBER_PLACEHOLDER = /__number__/g;
 
     doc.querySelectorAll('.ezselection-settings.options').forEach((container) => {
-        const findCheckedOptions = () => [...container.querySelectorAll('.ezselection-settings-option-checkbox:checked')];
+        const findCheckedOptions = () => container.querySelectorAll('.ezselection-settings-option-checkbox:checked');
         const toggleDisableState = () => {
             const disabledState = !!findCheckedOptions().length;
             const methodName = disabledState ? 'removeAttribute' : 'setAttribute';

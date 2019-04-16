@@ -6,8 +6,8 @@
     const filters = doc.querySelector('.ez-filters');
     const clearBtn = filters.querySelector('.ez-btn-clear');
     const applyBtn = filters.querySelector('.ez-btn-apply');
-    const selectBtns = [...doc.querySelectorAll('.ez-btn--select')];
-    const dateFields = [...doc.querySelectorAll('.ez-date-select')];
+    const selectBtns = doc.querySelectorAll('.ez-btn--select')
+    const dateFields = doc.querySelectorAll('.ez-date-select');
     const contentTypeSelector = doc.querySelector('.ez-content-type-selector');
     const contentTypeSelect = doc.querySelector('.ez-filters__item--content-type .ez-filters__select');
     const sectionSelect = doc.querySelector('.ez-filters__item--section .ez-filters__select');
@@ -17,8 +17,8 @@
     const searchCreatorInput = doc.querySelector('#search_creator');
     const usersList = doc.querySelector('.ez-filters__item--creator .ez-filters__user-list');
     const resetCreatorBtn = doc.querySelector('.ez-filters__item--creator .ez-icon--reset');
-    const listGroupsTitle = [...doc.querySelectorAll('.ez-content-type-selector__group-title')];
-    const contentTypeCheckboxes = [...doc.querySelectorAll('.ez-content-type-selector__item [type="checkbox"]')];
+    const listGroupsTitle = doc.querySelectorAll('.ez-content-type-selector__group-title');
+    const contentTypeCheckboxes = doc.querySelectorAll('.ez-content-type-selector__item [type="checkbox"]');
     const subtreeInput = doc.querySelector('#search_subtree');
     const clearFilters = (event) => {
         event.preventDefault();
@@ -111,7 +111,7 @@
         event.currentTarget.closest('.ez-content-type-selector__group').classList.toggle('ez-content-type-selector__group--collapsed');
     };
     const filterByContentType = () => {
-        const selectedCheckboxes = contentTypeCheckboxes.filter((checkbox) => checkbox.checked);
+        const selectedCheckboxes = [...contentTypeCheckboxes].filter((checkbox) => checkbox.checked);
         const contentTypesText = selectedCheckboxes.map((checkbox) => checkbox.dataset.name).join(', ');
         const option = contentTypeSelect[0];
         const defaultText = option.dataset.default;
@@ -124,8 +124,8 @@
         formatDate: (date) => new Date(date).toLocaleDateString(),
     };
     const checkSelectFieldsFilled = (modal) => {
-        const inputs = [...modal.querySelectorAll('.ez-date-select')];
-        const isFilled = inputs.every((input) => !!doc.querySelector(input.dataset.targetSelector).value.trim());
+        const inputs = modal.querySelectorAll('.ez-date-select');
+        const isFilled = [...inputs].every((input) => !!doc.querySelector(input.dataset.targetSelector).value.trim());
         const methodName = isFilled ? 'removeAttribute' : 'setAttribute';
 
         modal.querySelector('.ez-btn--select')[methodName]('disabled', !isFilled);

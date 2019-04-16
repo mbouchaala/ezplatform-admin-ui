@@ -59,7 +59,7 @@
 
     eZ.addConfig('fieldTypeValidators', [validator], true);
 
-    const dateFields = [...doc.querySelectorAll(SELECTOR_FIELD)];
+    const dateFields = doc.querySelectorAll(SELECTOR_FIELD);
     const dateConfig = {
         formatDate: (date) => eZ.helpers.timezone.formatFullDateTime(date, null, eZ.adminUiConfig.dateFormat.fullDate),
     };

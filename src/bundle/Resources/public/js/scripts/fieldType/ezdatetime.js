@@ -61,7 +61,7 @@
 
     eZ.addConfig('fieldTypeValidators', [validator], true);
 
-    const datetimeFields = [...doc.querySelectorAll(SELECTOR_FIELD)];
+    const datetimeFields = doc.querySelectorAll(SELECTOR_FIELD);
     const datetimeConfig = {
         enableTime: true,
         time_24hr: true,

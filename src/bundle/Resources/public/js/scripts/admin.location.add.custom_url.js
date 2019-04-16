@@ -2,10 +2,10 @@
     const modal = doc.querySelector('#ez-modal--custom-url-alias');
 
     if (modal) {
-        const discardBtns = [...modal.querySelectorAll('[data-dismiss="modal"]')];
+        const discardBtns = modal.querySelectorAll('[data-dismiss="modal"]');
         const submitBtn = modal.querySelector('[type="submit"]');
         const input = modal.querySelector('[required="required"]');
-        const checkboxes = [...modal.querySelectorAll('.ez-field-edit--ezboolean input')];
+        const checkboxes = modal.querySelectorAll('.ez-field-edit--ezboolean input');
         const toggleButtonState = () => {
             const hasValue = input.value.trim().length !== 0;
             const methodName = hasValue ? 'removeAttribute' : 'setAttribute';

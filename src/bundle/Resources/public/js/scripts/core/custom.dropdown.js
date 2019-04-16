@@ -24,8 +24,8 @@
                 data-value="{{value}}">
                     {{label}}<span class="${CLASS_REMOVE_SELECTION}"></span>
             </li>`;
-
             this.canSelectOnlyOne = !config.sourceInput.multiple;
+
             this.createSelectedItem = this.createSelectedItem.bind(this);
             this.selectFirstItem = this.selectFirstItem.bind(this);
             this.clearCurrentSelection = this.clearCurrentSelection.bind(this);

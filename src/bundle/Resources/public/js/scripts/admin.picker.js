@@ -3,7 +3,7 @@
     const SELECTOR_PICKER_INPUT = '.ez-picker__input';
     const SELECTOR_FORM_INPUT = '.ez-picker__form-input';
     const SELECTOR_CLEAR_BTN = '.ez-picker__btn--clear-input';
-    const pickers = [...doc.querySelectorAll(SELECTOR_PICKER)];
+    const pickers = doc.querySelectorAll(SELECTOR_PICKER);
     const pickerConfig = {
         enableTime: true,
         time_24hr: true,

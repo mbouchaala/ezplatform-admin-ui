@@ -10,7 +10,7 @@
     };
     const fields = doc.querySelectorAll('.ez-field-edit');
     const focusOnFirstError = () => {
-        const invalidFields = [...doc.querySelectorAll('.ez-field-edit.is-invalid')];
+        const invalidFields = doc.querySelectorAll('.ez-field-edit.is-invalid');
 
         fields.forEach((field) => field.removeAttribute('tabindex'));
         invalidFields.forEach((field) => field.setAttribute('tabindex', '-1'));

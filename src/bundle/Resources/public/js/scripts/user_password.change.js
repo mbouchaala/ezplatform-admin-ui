@@ -37,7 +37,7 @@
         const methodName = isError ? 'add' : 'remove';
         const field = target.closest(SELECTOR_FIELD);
         const labelWrapper = field.querySelector(SELECTOR_LABEL_WRAPPER);
-        const errorNodes = [...labelWrapper.querySelectorAll('.ez-field__error')];
+        const errorNodes = labelWrapper.querySelectorAll('.ez-field__error');
 
         field.classList[methodName](CLASS_INVALID);
         target.classList[methodName](CLASS_INVALID);

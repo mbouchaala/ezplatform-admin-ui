@@ -59,7 +59,7 @@
 
     eZ.addConfig('fieldTypeValidators', [validator], true);
 
-    const timeFields = [...doc.querySelectorAll(SELECTOR_FIELD)];
+    const timeFields = doc.querySelectorAll(SELECTOR_FIELD);
     const timeConfig = {
         enableTime: true,
         noCalendar: true,

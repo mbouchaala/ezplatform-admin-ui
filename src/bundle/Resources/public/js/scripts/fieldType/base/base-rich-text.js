@@ -1,4 +1,4 @@
-(function(global, doc, eZ) {
+(function(global, doc, eZ, CKEDITOR) {
     const TEXT_NODE = 3;
 
     class BaseRichText {
@@ -108,7 +108,7 @@
         emptyEmbed(embedNode) {
             let element = embedNode.firstChild;
             let next;
-            let removeClass = function() {};
+            let removeClass = () => {};
 
             while (element) {
                 next = element.nextSibling;
@@ -118,11 +118,11 @@
                 element = next;
             }
 
-            embedNode.classList.forEach(function(cl) {
+            embedNode.classList.forEach((cl) => {
                 let prevRemoveClass = removeClass;
 
                 if (cl.indexOf('is-embed-') === 0) {
-                    removeClass = function() {
+                    removeClass = () => {
                         embedNode.classList.remove(cl);
                         prevRemoveClass();
                     };
@@ -346,4 +346,4 @@
     }
 
     eZ.addConfig('BaseRichText', BaseRichText);
-})(window, document, window.eZ);
+})(window, document, window.eZ, window.CKEDITOR);

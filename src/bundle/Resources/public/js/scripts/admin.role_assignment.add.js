@@ -1,6 +1,6 @@
 (function(global, doc, eZ) {
     const udwContainer = doc.getElementById('react-udw');
-    const limitationsRadio = [...doc.querySelectorAll('.ez-limitations__radio')];
+    const limitationsRadio = doc.querySelectorAll('.ez-limitations__radio');
     const token = doc.querySelector('meta[name="CSRF-Token"]').content;
     const siteaccess = doc.querySelector('meta[name="SiteAccess"]').content;
     const closeUDW = () => ReactDOM.unmountComponentAtNode(udwContainer);

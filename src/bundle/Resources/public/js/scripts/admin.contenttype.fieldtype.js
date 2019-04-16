@@ -1,5 +1,5 @@
 (function(global, doc) {
-    const togglers = [...doc.querySelectorAll('.ez-card__body-display-toggler')];
+    const togglers = doc.querySelectorAll('.ez-card__body-display-toggler');
     const toggleFieldTypeView = (event) => {
         event.preventDefault();
 
