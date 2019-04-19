@@ -14,6 +14,7 @@
                         { value: 'url.edit'|trans }
                     ]} %}
 
+                    {# @todo use CSS instead of |truncate #}
                     {% include '@ezdesign/parts/page_title.html.twig' with {
                         title: 'url.editing'|trans({'%url%': url.url|truncate(50) }),
                         iconName: 'link'
