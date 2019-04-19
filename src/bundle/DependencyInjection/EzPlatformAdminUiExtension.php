@@ -31,9 +31,9 @@ class EzPlatformAdminUiExtension extends Extension implements PrependExtensionIn
             new FileLocator(__DIR__ . '/../Resources/config')
         );
 
-        $loader->load('default_parameters.yml');
-        $loader->load('services.yml');
-        $loader->load('role.yml');
+        $loader->load('default_parameters.yaml');
+        $loader->load('services.yaml');
+        $loader->load('role.yaml');
     }
 
     /**
@@ -56,7 +56,7 @@ class EzPlatformAdminUiExtension extends Extension implements PrependExtensionIn
      */
     private function prependViews(ContainerBuilder $container): void
     {
-        $configFile = __DIR__ . '/../Resources/config/views.yml';
+        $configFile = __DIR__ . '/../Resources/config/views.yaml';
         $config = Yaml::parse(file_get_contents($configFile));
         $container->prependExtensionConfig('ezpublish', $config);
         $container->addResource(new FileResource($configFile));
@@ -67,7 +67,7 @@ class EzPlatformAdminUiExtension extends Extension implements PrependExtensionIn
      */
     private function prependImageVariations(ContainerBuilder $container)
     {
-        $imageConfigFile = __DIR__ . '/../Resources/config/image_variations.yml';
+        $imageConfigFile = __DIR__ . '/../Resources/config/image_variations.yaml';
         $config = Yaml::parse(file_get_contents($imageConfigFile));
         $container->prependExtensionConfig('ezpublish', $config);
         $container->addResource(new FileResource($imageConfigFile));
@@ -78,7 +78,7 @@ class EzPlatformAdminUiExtension extends Extension implements PrependExtensionIn
      */
     private function prependUniversalDiscoveryWidget(ContainerBuilder $container)
     {
-        $udwConfigFile = __DIR__ . '/../Resources/config/universal_discovery_widget.yml';
+        $udwConfigFile = __DIR__ . '/../Resources/config/universal_discovery_widget.yaml';
         $config = Yaml::parse(file_get_contents($udwConfigFile));
         $container->prependExtensionConfig('ezpublish', $config);
         $container->addResource(new FileResource($udwConfigFile));
@@ -89,7 +89,7 @@ class EzPlatformAdminUiExtension extends Extension implements PrependExtensionIn
      */
     private function prependEzDesignConfiguration(ContainerBuilder $container)
     {
-        $eZDesignConfigFile = __DIR__ . '/../Resources/config/ezdesign.yml';
+        $eZDesignConfigFile = __DIR__ . '/../Resources/config/ezdesign.yaml';
         $config = Yaml::parseFile($eZDesignConfigFile);
         $container->prependExtensionConfig('ezdesign', $config['ezdesign']);
         $container->prependExtensionConfig('ezpublish', $config['ezpublish']);
@@ -101,7 +101,7 @@ class EzPlatformAdminUiExtension extends Extension implements PrependExtensionIn
      */
     private function prependAdminUiFormsConfiguration(ContainerBuilder $container)
     {
-        $adminUiFormsConfigFile = __DIR__ . '/../Resources/config/admin_ui_forms.yml';
+        $adminUiFormsConfigFile = __DIR__ . '/../Resources/config/admin_ui_forms.yaml';
         $config = Yaml::parseFile($adminUiFormsConfigFile);
         $container->prependExtensionConfig('ezpublish', $config);
         $container->addResource(new FileResource($adminUiFormsConfigFile));
@@ -112,7 +112,7 @@ class EzPlatformAdminUiExtension extends Extension implements PrependExtensionIn
      */
     private function prependBazingaJsTranslationConfiguration(ContainerBuilder $container)
     {
-        $configFile = __DIR__ . '/../Resources/config/bazinga_js_translation.yml';
+        $configFile = __DIR__ . '/../Resources/config/bazinga_js_translation.yaml';
         $config = Yaml::parseFile($configFile);
         $container->prependExtensionConfig('bazinga_js_translation', $config);
         $container->addResource(new FileResource($configFile));
