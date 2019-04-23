@@ -93,7 +93,7 @@ class VersionDraftConflictController extends Controller
             $versionsDataset->load($contentInfo);
             $conflictedDrafts = $versionsDataset->getConflictedDraftVersions($contentInfo->currentVersionNo);
 
-            $modalContent = $this->renderView('@ezdesign/content/modal_draft_conflict.html.twig', [
+            $modalContent = $this->renderView('@ezdesign/content/modal/draft_conflict.html.twig', [
                 'conflicted_drafts' => $conflictedDrafts,
                 'location' => $location,
                 'content_is_user' => (new ContentIsUser($this->userService))->isSatisfiedBy($content),
